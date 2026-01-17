@@ -1,17 +1,16 @@
 import React from 'react'
-import CartItem from './CartItem'
+import AddressCard from '../AddressCard/AddressCard'
+import CartItem from '../Cart/CartItem'
 import Button from '@mui/material/Button';
-import { useNavigate } from 'react-router-dom';
 
-const Cart = () => {
-    const navigate= useNavigate();
-
-        const handleCheckout=()=>{
-        navigate("/checkout?step=2")
-    }
-    
-    return (
+const OrderSummary = () => {
+  return (
     <div>
+      <div className='p-5 shadow-lg rounded-s-md border'>
+          <AddressCard/>
+      </div>
+
+      <div>
     <div className='lg:grid grid-cols-3 mt-10 lg:px-16 relative'>
         <div className='col-span-2'>
             {[1,1,1,1].map((item)=><CartItem/>)}
@@ -39,7 +38,7 @@ const Cart = () => {
                 </div>  
                 
             </div>
-            <Button onClick={handleCheckout} variant="contained" className='w-full mt-2' sx={{ px: "5rem", py: ".7rem", bgcolor: "#9155fd", color:"white"}}>
+            <Button variant="contained" className='w-full mt-2' sx={{ px: "5rem", py: ".7rem", bgcolor: "#9155fd", color:"white"}}>
                 CHECKOUT
             </Button>
         </div> 
@@ -47,7 +46,11 @@ const Cart = () => {
     </div>
 
     </div>
+
+
+
+    </div>
   )
 }
 
-export default Cart
+export default OrderSummary

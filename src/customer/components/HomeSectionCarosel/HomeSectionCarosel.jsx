@@ -18,7 +18,7 @@ const HomeSectionCarosel = ({data,sectionName}) => {
 
     const syncActiveIndex=({item})=>setActiveIndex(item)
     const items = data.slice(0,10).map((item)=> <HomeSectionCard product={item}/>);
-
+// fuseSelector
     return (
     <div className="border">
         <h2 className="text2xl font-extrabold text-gray-800 py-5">{sectionName}</h2>
